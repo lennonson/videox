@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    overflow: hidden;
+    border-radius: 20rpx;
+}
+html {box-sizing: border-box;}
+* ,*::before, *::after{box-sizing: inherit;}
+html, body{height: 100%; margin: 0;}
+
+body {
+    background: linear-gradient(70deg, #130f30, #15193f);
+}
+
+/* 标题栏 */
+.header {
+    display: block;
+    position: fixed;
+    height: 28px;
+    bottom: calc(100% - 28px);
+    width: calc(100% - 2px);
+    -webkit-app-region: drag;
+    justify-items: center;
+    background: linear-gradient(70deg, #130f30, #15193f);
+    width: 100%;
+    padding: 0;
+    transition: bottom 0.3s;
+}
+.header-back {
+    bottom: 100%;
+}
+#window-controls{
+    -webkit-app-region: no-drag;
+    display: grid;
+    grid-template-columns: repeat(3, 44px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: #15193f;
+}
+.window-Btn {
+    grid-row: 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #15193f;
+    border-radius: 2ch;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+}
+#window-controls .window-Btn:hover {
+    background: rgba(84, 100, 240, 0.5);
+}
+#window-controls .window-Btn:active {
+    background: rgba(84, 100, 240, 0.9);
+}
+#minButton {
+    grid-column: 1;
+}
+#maxButton{
+    grid-column: 2;
+}
+#closeButton {
+    grid-column: 3;
+}
+#closeButton:hover {
+    background: #ff0015 !important;
+}
+#closeButton:active {
+    background: #F1707A !important;
+}
+#videoTitle{
+    justify-items: center;
+    color: white;
+    font-family: serif;
+    font-size: 16px;
+    margin-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 用省略号表示超出的部分 */
+    white-space: nowarp;    /* 防止文本换行 */
+}
+
+/* 视频播放主体 */
+main {
+    height: calc(100% - 28px);
+    margin-top: 28px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+.mainwindow {
+    height: 92%;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+}
+#videoPlayer {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* 控件 */
+.widgets {
+    border-radius: 2ch;
+    background: rgb(55, 50, 83);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s;
+}
+.Btn {
+    border-radius: 50%;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    background-size: 53%;
+    transition: border 0.2s;
+}
+.Btn:hover {
+    border: 1px solid #b4bad8;
+}
+
+/* 播放控件 */
+.PlayCTRL {
+    top: calc(100% - 4px);
+    width: 100%;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PlayCTRL-open {
+    top: calc(100% - 59px);
+}
+.playing {
+    background-image: url("./img/24gf-pause2.png");
+}
+.paused {
+    background-image: url("./img/play.png");
+}
+#playBtn {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    z-index: 1;
+    background-size: 58%;
+}
+#rewindBtn {
+    z-index: 0;
+    margin-right: 120px;
+    background-image: url("./img/bg-backward.png");
+}
+#forward {
+    z-index: 0;
+    margin-left: 120px;
+    background-image: url("./img/bg-forward.png");
+}
+#list {
+    left: 2%;
+    background-image: url("./img/list.png");
+}
+#openFile {
+    right: 8%;
+    background-image: url("./img/openFolder.png");
+}
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transition: height 0.3s ease-in-out;
+}
+.progress-bar:hover {
+    height: 10px;
+}
+#fullScreen {
+    right: 2%;
+    background-image: url("./img/fullScreen.svg");
+}
+#volume {
+    right: 14%;
+    background-image: url("./img/volume.svg");
+}
+
+/* 列表控件 */
+.listCTRL {
+    right: calc(100%);
+    top: 28px;
+    height: calc(100% - 80px);
+    width: 140px;
+    display: grid;
+    transition: right 0.25s;
+    padding-top: 5px;
+    color: white;
+}
+.listCTRL-open {
+    right: calc(100% - 140px);
+}
+
+
+/* testtest */
+
+#receiveBox {
+    width: 60%;
+    height: 40%;
+    left: 20%;
+    top: 10%;
+    position: absolute;
+    font-size: large;
+}
+#sendBox {
+    width: 40%;
+    height: 30%;
+    left: 35%;
+    top: 60%;
+    position: absolute;
+    font-size: large;
+}
+#sendButton {
+    position: absolute;
+    bottom: 10%;
+    left: 75%;
+    background-color: rgb(0, 0, 0);
+}
+

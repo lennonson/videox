@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="./index.css" rel="stylesheet">
+    </head>
+    <body>
+        <header id="titlebar" class="header">
+            <span id="videoTitle">VIDEOX</span>
+            <div id="window-controls">
+                <button class="window-Btn" id="minButton">
+                    <img class="icon" src="./img/minimize.png">
+                </button>
+                <button class="window-Btn" id="maxButton">
+                    <img class="icon" src="./img/maxmize.svg">
+                </button>
+                <button class="window-Btn" id="closeButton">
+                    <img class="icon" src="./img/close.png">
+                </button>
+            </div>
+        </header>
+        <main>
+            <div class="mainWindow">
+                <video id="videoPlayer"></video>
+            </div>
+            
+            <!-- 控件 -->
+            <div class="widgets PlayCTRL" id="PlayCTRL">
+                <input type="range" id="progressBar" class="progress-bar" 
+                    value="0" min="0" step="0.1">
+                <button class="Btn paused" id="playBtn">
+                </button>
+                <button class="Btn" id="rewindBtn"></button>
+                <button class="Btn" id="forward"></button>
+                <button class="Btn" id="list"></button>
+                <button class="Btn" id="openFile"></button>
+                <button class="Btn" id="fullScreen"></button>
+                <button class="Btn" id="volume"></button>
+            </div>
+            <div class="widgets listCTRL" id="listCTRL">
+                <h3>最近播放</h3>
+            </div>
+            <!-- 控件 -->
+
+        </main>
+    </body>
+    <script src="./renderer.js"></script>
+</html>
